@@ -57,10 +57,32 @@ Body: JSON<br>
 json<br>
 Copy code<br>
 {<br>
-  "to": "+1234567890",<br>
+  "to": "+917297028304",<br>
   "message": "Hello, this is a test message after a call!"<br>
 }<br>
 
+<h1>Integrating with Call Events</h1>
+Tasker Profile:<br>
+Event: Phone Offhook (call started)<br>
+Action: Set a variable %CALLINPROGRESS to 1.<br>
+Event: Phone Idle (call ended)<br>
+
+Action:<br>
+If %CALLINPROGRESS is 1, then send a HTTP POST request to the API endpoint.<br>
+
+HTTP POST Action in Tasker:<br>
+Server<br>
+: http://your_server_url/send-sms<br>
+Method: POST<br>
+Content-Type: application/json<br>
+Data/File:<br>
+json<br>
+Copy code<br>
+{<br>
+  "to": "+917297028304",<br>
+  "message": "Hello, this is a test message after a call!"<br>
+}<br>
+Variable: Clear %CALLINPROGRESS.<br>
 
 
 
