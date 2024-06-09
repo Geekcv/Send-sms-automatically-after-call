@@ -7,23 +7,23 @@ Prerequisites:<BR>
 2-Twilio Account: Sign up at Twilio and get your API credentials.<BR><BR><BR>
 
 <h1>code</h1>
-const express = require('express');
-const bodyParser = require('body-parser');
-const twilio = require('twilio');
+const express = require('express');<BR>
+const bodyParser = require('body-parser');<BR>
+const twilio = require('twilio');<BR><BR>
 
-const app = express();
-const port = process.env.PORT || 3000;
+const app = express();<BR>
+const port = process.env.PORT || 3000;<BR><BR><BR>
 
-// Twilio credentials
-const accountSid = 'your_twilio_account_sid';
-const authToken = 'your_twilio_auth_token';
-const client = new twilio(accountSid, authToken);
+// Twilio credentials<BR>
+const accountSid = 'your_twilio_account_sid';<BR>
+const authToken = 'your_twilio_auth_token';<BR>
+const client = new twilio(accountSid, authToken);<BR><BR><BR>
 
-app.use(bodyParser.json());
+app.use(bodyParser.json());<BR><BR>
 
-// Endpoint to handle incoming requests to send SMS
-app.post('/send-sms', (req, res) => {
-    const { to, message } = req.body;
+// Endpoint to handle incoming requests to send SMS<BR>
+app.post('/send-sms', (req, res) => {<BR>
+    const { to, message } = req.body;<BR>
 
     client.messages.create({
         body: message,
@@ -38,10 +38,10 @@ app.post('/send-sms', (req, res) => {
         console.error(error);
         res.status(500).send('Failed to send SMS');
     });
-});
+});<BR>
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+app.listen(port, () => {<BR>
+    console.log(`Server is running on port ${port}`);<BR>
 });
 
 
