@@ -42,6 +42,25 @@ app.post('/send-sms', (req, res) => {<BR>
 
 app.listen(port, () => {<BR>
     console.log(`Server is running on port ${port}`);<BR>
-});
+});<br>
+
+
+<h1>package</h1>
+npm install express twilio body-parser
+
+
+<h1>test api</h1>
+
+URL: http://localhost:3000/send-sms (or the ngrok URL)<br>
+Method: POST<br>
+Body: JSON<br>
+json<br>
+Copy code<br>
+{<br>
+  "to": "+1234567890",<br>
+  "message": "Hello, this is a test message after a call!"<br>
+}<br>
+
+
 
 
