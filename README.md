@@ -52,10 +52,9 @@ app.listen(port, () => {<BR>
 
 <h1>Test API In Postman</h1>
 
-URL: http://localhost:3000/send-sms (or the ngrok URL)<br>
+URL: http://localhost:3000/send-sms <br>
 Method: POST<br>
 Body: JSON<br>
-json<br>
 {<br>
   "to": "+917297028304",<br>
   "message": "Hello, this is a test message after a call!"<br>
@@ -71,12 +70,9 @@ Action:<br>
 If %CALLINPROGRESS is 1, then send a HTTP POST request to the API endpoint.<br>
 
 HTTP POST Action in Tasker:<br>
-Server URL<br>
-: http://your_server_url/send-sms<br>
+Server URL: http://your_server_url/send-sms<br>
 Method: POST<br>
 Content-Type: application/json<br>
-Data/File:<br>
-json<br>
 {<br>
   "to": "+917297028304",<br>
   "message": "Hello, this is a test message after a call!"<br>
