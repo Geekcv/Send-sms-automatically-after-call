@@ -1,8 +1,7 @@
 # Send-sms-automatically-after-call
-SMS 
 
-Step-by-Step Guide:
-Prerequisites:<BR>
+
+<h1>Prerequisites:</h1><BR>
 1-Node.js and npm: Install from nodejs.org.<BR>
 2-Twilio Account: Sign up at Twilio and get your API credentials.<BR><BR><BR>
 
@@ -49,13 +48,12 @@ app.listen(port, () => {<BR>
 npm install express twilio body-parser
 
 
-<h1>test api</h1>
+<h1>Test API in Postman</h1>
 
 URL: http://localhost:3000/send-sms (or the ngrok URL)<br>
 Method: POST<br>
 Body: JSON<br>
 json<br>
-Copy code<br>
 {<br>
   "to": "+917297028304",<br>
   "message": "Hello, this is a test message after a call!"<br>
@@ -71,18 +69,19 @@ Action:<br>
 If %CALLINPROGRESS is 1, then send a HTTP POST request to the API endpoint.<br>
 
 HTTP POST Action in Tasker:<br>
-Server<br>
+Server URL<br>
 : http://your_server_url/send-sms<br>
 Method: POST<br>
 Content-Type: application/json<br>
 Data/File:<br>
 json<br>
-Copy code<br>
 {<br>
   "to": "+917297028304",<br>
   "message": "Hello, this is a test message after a call!"<br>
 }<br>
-Variable: Clear %CALLINPROGRESS.<br>
+Variable: Clear %CALLINPROGRESS.<be>
+
+<H2>This setup ensures that the API is triggered automatically after the call ends, sending the SMS as needed.</H2>
 
 
 
